@@ -10,7 +10,7 @@ pipeline {
                           doGenerateSubmoduleConfigurations: false,
                           extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'CleanCheckout']],
                           submoduleCfg: [],
-                          userRemoteConfigs: [[url: 'https://github.com/your-username/your-repo.git']]])
+                          userRemoteConfigs: [[url: 'https://github.com/maheshgoud96/spring-framework-petclinic.git']]])
             }
         }
         
