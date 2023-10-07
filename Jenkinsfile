@@ -21,7 +21,7 @@ pipeline {
             steps {
                 // Install and configure Maven
                 script {
-                    def mvnHome = tool name: 'Maven', type: 'hudson.tasks.Maven$MavenInstallation'
+                    def MAVEN_HOME = tool name: 'Maven', type: 'hudson.tasks.Maven$MavenInstallation'
                     env.PATH = "${mvnHome}/bin:${env.PATH}"
                 }
             }
