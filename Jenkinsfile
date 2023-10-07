@@ -1,9 +1,7 @@
 pipeline {
     agent any
     
-    environment {
-        MAVEN_HOME = tool name: 'Maven', type: 'hudson.tasks.Maven$MavenInstallation'
-    }
+ 
     stages {
         stage('Checkout') {
             steps {
@@ -14,16 +12,6 @@ pipeline {
                           extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'CleanCheckout']],
                           submoduleCfg: [],
                           userRemoteConfigs: [[url: 'https://github.com/maheshgoud96/spring-framework-petclinic.git']]])
-            }
-        }
-
-        stage('Install Maven') {
-            steps {
-                // Install and configure Maven
-                script {
-                    def MAVEN_HOME = tool name: 'Maven', type: 'hudson.tasks.Maven$MavenInstallation'
-                    env.PATH = "${mvnHome}/bin:${env.PATH}"
-                }
             }
         }
         stage('Build') {
