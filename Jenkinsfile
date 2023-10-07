@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // Checkout the code from GitHub
                 checkout([$class: 'GitSCM',
-                          branches: [[name: '*/master']],
+                          branches: [[name: '*/main']],
                           doGenerateSubmoduleConfigurations: false,
                           extensions: [[$class: 'CleanBeforeCheckout'], [$class: 'CleanCheckout']],
                           submoduleCfg: [],
